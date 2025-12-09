@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Manager Pro – Track Every Loan, Effortlessly</title>
+    <meta name="description"
+        content="The smartest way to track personal and business loans. Partial payments, interest, reminders, PDF invoices — all in one secure app." />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --primary-dark: #1D4ED8;
+            --accent: #10B981;
+            --amber: #F59E0B;
+            --dark: #0F172A;
+            --gray: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #10B981, #34D399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            margin: 1.5rem 0;
+            color: #E2E8F0;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--amber);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .btn {
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* Features */
+        .features {
+            padding: 140px 20px;
+            background: #0F172A;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 5rem;
+            background: linear-gradient(to right, #10B981, #34D399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 40px;
+            border-radius: 28px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-16px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #10B981, #34D399);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* CTA */
+        .final-cta {
+            padding: 140px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #10B981, #059669);
+        }
+
+        .final-cta h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            background: #0F172A;
+            color: #94A3B8;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 1.2s ease-out both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section (Exactly as requested) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="badge">Trusted by over 200,000 users worldwide</div>
+            <h1>Never Forget Who Owes You Money Again</h1>
+            <p>Track loans, collect payments, send reminders — all in one beautiful, secure app</p>
+
+            <div class="btn-group">
+                <a href="https://play.google.com/store/apps/details?id=com.yourcompany.loanmanager"
+                    class="btn btn-primary">
+                    <i class="fab fa-google-play"></i> Get on Android
+                </a>
+                <a href="#" class="btn btn-outline">
+                    <i class="fab fa-apple"></i> Download on iOS
+                </a>
+            </div>
+
+            <p style="margin-top: 4rem; font-size: 1.1rem; color: #94A3B8;">
+                Available worldwide • Works offline • 100% private
+            </p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need to Manage Loans</h2>
+            <div class="feature-grid">
+                <div class="feature-card animate">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Partial Payments</h3>
+                    <p>Record any amount anytime — balance updates instantly</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.2s">
+                    <div class="feature-icon"><i class="fas fa-percentage"></i></div>
+                    <h3>Interest Tracking</h3>
+                    <p>Simple or compound interest — automatically calculated</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.4s">
+                    <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                    <h3>Smart Reminders</h3>
+                    <p>Never miss a due date — get notified automatically</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.6s">
+                    <div class="feature-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Professional Invoices</h3>
+                    <p>Generate beautiful, branded PDF statements in seconds</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.8s">
+                    <div class="feature-icon"><i class="fas fa-link"></i></div>
+                    <h3>Shareable Loan Links</h3>
+                    <p>Send a link — borrowers see their balance without an account</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 1s">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Bank-Level Privacy</h3>
+                    <p>Your data stays on your device — never shared or sold</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Take Control of Your Loans?</h2>
+            <p style="font-size: 1.6rem; margin-bottom: 3rem; opacity: 0.95;">
+                Join hundreds of thousands who trust Loan Manager Pro every day
+            </p>
+            <a href="#" class="btn btn-primary"
+                style="font-size: 1.5rem; padding: 24px 80px;">
+                Download Free Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Loan Manager Pro. All rights reserved.</p>
+        <p style="margin-top: 1rem;">
+            <a href="#" style="color: #94A3B8; margin: 0 15px; text-decoration: none;">Privacy Policy</a> •
+            <a href="#" style="color: #94A3B8; margin: 0 15px; text-decoration: none;">Terms of Service</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
